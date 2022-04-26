@@ -1,5 +1,96 @@
+/* #region - common */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* #endregion - common */
+
+
+/* #region - variables */
+
+:root {
+    --color-succes: #009688;
+    --color-notification: #8EDAFC;
+    --color-icon: #B1B1B1;
+    --color-messageSent: #D5F9BA;
+    --color-primary: #DCDBD3;
+    --color-light: #E9EBEB;
+    --color-lighter: #EAEAEA;
+}
+
+
+/* #endregion - variables */
+
+
+/* #region - utility */
+
+.bkg-succes {
+    width: 100%;
+    height: 15%;
+    background-color: var(--color-succes);
+}
+
+.bkg-primary {
+    width: 100%;
+    height: 85%;
+    background-color: var(--color-primary);
+}
+
+
+/* #endregion - utility */
+
+.container-bkg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.bkg-header {
+    max-width: 100%;
+    max-height: 15%;
+}
+
+.bkg-main {
+    max-width: 100%;
+    max-height: 85%;
+}
+
+.container-app {
+    width: 80%;
+    height: calc(100% - 50px);
+    margin: 25px 0;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translate(50%, 0);
+    display: flex;
+}
+
+
+/* #region - users */
+
+.users {
+    width: 35%;
+}
+
+.messages {
+    width: 65%;
+}
+
+.users,
+.messages {
+    background-color: #E9EBEB;
+    border: 1px solid black;
+    height: 100%;
+}
+
+
+/* #endregion - users */
