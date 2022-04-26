@@ -8,6 +8,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
 }
 
 img {
@@ -18,6 +19,7 @@ img {
 
 i {
     color: var(--color-icon);
+    font-size: 14px;
 }
 
 
@@ -34,6 +36,7 @@ i {
     --color-primary: #DCDBD3;
     --color-light: #E9EBEB;
     --color-lighter: #EAEAEA;
+    --text-light: grey;
 }
 
 
@@ -52,6 +55,14 @@ i {
     width: 100%;
     height: 85%;
     background-color: var(--color-primary);
+}
+
+.d-flex {
+    display: flex;
+}
+
+.item-center {
+    align-items: center;
 }
 
 
@@ -73,6 +84,10 @@ i {
     max-height: 85%;
 }
 
+.bkg-primary-app {
+    background-color: var(--color-lighter);
+}
+
 .container-app {
     width: 80%;
     height: calc(100% - 50px);
@@ -81,7 +96,6 @@ i {
     top: 0;
     right: 50%;
     transform: translate(50%, 0);
-    display: flex;
 }
 
 
@@ -104,17 +118,12 @@ i {
 .my-user {
     width: 100%;
     height: 50px;
-    background-color: var(--color-lighter);
-    padding: 0.25rem;
-    display: flex;
-    align-items: center;
+    padding: 0.5rem;
 }
 
 .my-user-data {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
     column-gap: 0.5rem;
 }
 
@@ -125,6 +134,105 @@ i {
 
 .icon-action i {
     padding: 0 0.25rem;
+}
+
+.notification {
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-notification);
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.notification i {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--color-notification);
+}
+
+.notification i::before {
+    width: 35px;
+    height: 35px;
+}
+
+.notification span {
+    color: var(--text-light);
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.serch {
+    width: 100%;
+    height: 40px;
+    padding: 0.25rem;
+}
+
+.users .serch .icon i {
+    height: calc(40px - 0.5rem);
+    padding: 0 1rem;
+    background-color: white;
+    border-top: 1px solid var(--color-icon);
+    border-bottom: 1px solid var(--color-icon);
+    border-left: 1px solid var(--color-icon);
+    display: flex;
+    align-items: center;
+}
+
+.users .serch .icon span {
+    width: 100%;
+    height: 100%;
+}
+
+.users .serch input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-icon);
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+.contact-list {
+    width: 100%;
+    height: calc(100% - 40px - 60px - 50px);
+}
+
+.contact-list ul {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: auto;
+}
+
+.contact-list li {
+    width: 100%;
+    height: calc(100% / 8);
+    border-top: 1px solid var(--color-icon);
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
+
+.contact-list li>img {
+    margin-right: 0.75rem;
+}
+
+.preview-chat {
+    height: 100%;
+}
+
+.nickname {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.last-message {
+    color: var(--color-icon);
 }
 
 
