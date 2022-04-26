@@ -12,6 +12,7 @@ const app = new Vue({
     el: '#app',
     data: {
         contacts: [{
+                activeChat: 0,
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
@@ -166,13 +167,5 @@ const app = new Vue({
             }
         ]
     },
-    methods: {
-        addMessage() {
-            this.contacts.forEach((element, index) => {
-                this.elemento = this.contacts[index]
-                    //console.log(this.elemento);
-                console.log(this.elemento.messages[index].message);
-            });
-        }
-    }
+    methods: {}
 });

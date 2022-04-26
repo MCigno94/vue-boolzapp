@@ -58,7 +58,7 @@
                     <!-- /.serch -->
                     <div class="contact-list">
                         <ul class="d-flex">
-                            <li class="item-user d-flex" v-for="contact in contacts">
+                            <li class="item-user d-flex" v-for="(contact, index) in contacts" @click="activeChat = index">
                                 <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                                 <div class="preview-chat">
                                     <div class="nickname">{{contact.name}}</div>
@@ -77,7 +77,7 @@
                     <div class="selected-user">
                         <div class="item-user-selected bkg-primary-app d-flex item-center">
                             <img src="./assets/img/avatar_1.jpg" alt="">
-                            <div class="nickname" @click="addMessage">
+                            <div class="nickname">
                                 Michele
                                 <div class="last-login">
                                     Ultimo accesso oggi alle 12:00
@@ -95,9 +95,9 @@
                         <!-- /.item-user-selected -->
                     </div>
                     <!-- /.selected-user -->
-                    <div class="show-messages">
-                        <div class="message-received txt-left" v-for="(contact, index) in contacts">
-                            <div class="txt" v-for="(message,index) in contact.messages">
+                    <div class="show-messages" v-for="(contact, index) in contacts">
+                        <div :class="message.status == 'received' ? 'message-received ':'message-sent'" class="txt-left" v-for="(message,index) in contact.messages">
+                            <div class="txt">
                                 {{message.message}}
                             </div>
                             <!-- /.txt -->
