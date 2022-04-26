@@ -268,16 +268,6 @@ i {
     overflow-y: auto;
 }
 
-.messages-user {
-    margin-right: 55%;
-    margin-left: 2rem;
-}
-
-.my-messages {
-    margin-right: 2rem;
-    margin-left: 55%;
-}
-
 .message-sent,
 .message-received {
     margin-bottom: 0.75rem;
@@ -290,10 +280,14 @@ i {
 
 .message-sent {
     background-color: var(--color-messageSent);
+    margin-right: 2rem;
+    margin-left: 55%;
 }
 
 .message-received {
     background-color: white;
+    margin-right: 55%;
+    margin-left: 2rem;
 }
 
 .hour {
