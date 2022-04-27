@@ -180,7 +180,19 @@ const app = new Vue({
             }
             this.contacts[this.activeChat].messages.push(this.newMessage);
             this.inputMessage = '';
+            setTimeout(this.autoMessage, 1000)
+        },
+        autoMessage() {
+            this.newAutoMessage = {
+                date: '10/01/2020 15:50:00',
+                message: 'ok',
+                status: 'received'
+            }
+            this.contacts[this.activeChat].messages.push(this.newAutoMessage);
         }
+
+    },
+    mounted: function() {
 
     }
 });
