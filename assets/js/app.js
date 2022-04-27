@@ -12,6 +12,7 @@ const app = new Vue({
     el: '#app',
     data: {
         activeChat: 0,
+        inputMessage: '',
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -170,6 +171,16 @@ const app = new Vue({
     methods: {
         selectChat(index) {
             this.activeChat = index;
+        },
+        addMessage() {
+            this.newMessage = {
+                date: '10/01/2020 15:50:00',
+                message: this.inputMessage,
+                status: 'sent'
+            }
+            this.contacts[this.activeChat].messages.push(this.newMessage);
+            this.inputMessage = '';
         }
+
     }
 });

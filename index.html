@@ -109,7 +109,7 @@
                     <!-- /.show-messages -->
                     <div class="type-message bkg-primary-app d-flex item-center">
                         <i class="fa-regular fa-smile"></i>
-                        <input type="text" name="" id="" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="inputMessage" @keyup.enter="addMessage">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                     <!-- /.type-message -->
