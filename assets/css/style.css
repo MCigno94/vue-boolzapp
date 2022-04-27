@@ -110,6 +110,10 @@ i {
     transform: translate(50%, 0);
 }
 
+.none {
+    display: none;
+}
+
 
 /* #region - users */
 
@@ -268,7 +272,7 @@ i {
     width: 100%;
     height: calc(100% - 100px);
     background-image: url("../img/mine.jpg");
-    padding: 3rem;
+    padding: 0.5rem 3rem;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -299,7 +303,7 @@ i {
     color: var(--text-light);
     position: absolute;
     right: 5px;
-    bottom: 5px;
+    bottom: 3px;
 }
 
 .type-message i {

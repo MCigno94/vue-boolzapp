@@ -13,6 +13,7 @@ const app = new Vue({
     data: {
         activeChat: 0,
         inputMessage: '',
+        searchContact: '',
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',
@@ -166,7 +167,8 @@ const app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
+        activeSerchContact: ['']
     },
     methods: {
         selectChat(index) {
@@ -180,7 +182,7 @@ const app = new Vue({
             }
             this.contacts[this.activeChat].messages.push(this.newMessage);
             this.inputMessage = '';
-            setTimeout(this.autoMessage, 1000)
+            setTimeout(this.autoMessage, 1000);
         },
         autoMessage() {
             this.newAutoMessage = {
@@ -189,10 +191,20 @@ const app = new Vue({
                 status: 'received'
             }
             this.contacts[this.activeChat].messages.push(this.newAutoMessage);
+        },
+        selectContact() {
+            this.contacts.forEach(element => {
+                // seleziono nome del contatto
+                if (!element.name.toLowerCase().includes(this.searchContact.split(''))) {
+                    console.log(true);
+                    element.visible = false;
+                }
+            });
         }
 
     },
-    mounted: function() {
-
-    }
 });
+
+// scomporre la parola e verificare che ci siano delle uguaglianze
+
+/* this.searchContact.split('').includes(this.contacts[index].name.split('')) ? this.contacts[index].visible = true : this.contacts[index].visible = false */
