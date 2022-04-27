@@ -76,9 +76,9 @@
                 <section class="messages">
                     <div class="selected-user">
                         <div class="item-user-selected bkg-primary-app d-flex item-center">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
+                            <img :src="'./assets/img/avatar' + contacts[activeChat].avatar + '.jpg'" alt="">
                             <div class="nickname">
-                                Michele
+                                {{contacts[activeChat].name}}
                                 <div class="last-login">
                                     Ultimo accesso oggi alle 12:00
                                 </div>
