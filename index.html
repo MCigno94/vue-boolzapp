@@ -58,7 +58,7 @@
                     <!-- /.serch -->
                     <div class="contact-list">
                         <ul class="d-flex">
-                            <li class="item-user d-flex" v-for="(contact, index) in contacts" @click="activeChat = index">
+                            <li class="item-user d-flex" v-for="(contact, index) in contacts" @click="selectChat(index)">
                                 <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                                 <div class="preview-chat">
                                     <div class="nickname">{{contact.name}}</div>
@@ -95,8 +95,8 @@
                         <!-- /.item-user-selected -->
                     </div>
                     <!-- /.selected-user -->
-                    <div class="show-messages" v-for="(contact, index) in contacts">
-                        <div :class="message.status == 'received' ? 'message-received ':'message-sent'" class="txt-left" v-for="(message,index) in contact.messages">
+                    <div class="show-messages">
+                        <div :class="message.status == 'received' ? 'message-received ':'message-sent'" class="txt-left" v-for="message in contacts[activeChat].messages">
                             <div class="txt">
                                 {{message.message}}
                             </div>

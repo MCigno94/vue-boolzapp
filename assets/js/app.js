@@ -11,8 +11,8 @@ Click sul contatto mostra la conversazione del contatto cliccato
 const app = new Vue({
     el: '#app',
     data: {
+        activeChat: 0,
         contacts: [{
-                activeChat: 0,
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
@@ -167,5 +167,9 @@ const app = new Vue({
             }
         ]
     },
-    methods: {}
+    methods: {
+        selectChat(index) {
+            this.activeChat = index;
+        }
+    }
 });
