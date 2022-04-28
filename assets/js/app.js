@@ -179,7 +179,7 @@ const app = new Vue({
         ],
         activeMessage: {
             visible: false,
-            index: false
+            index: null
         }
 
 
@@ -216,23 +216,35 @@ const app = new Vue({
                 }
             });
         },
-        dropDown(element, index) {
+        dropDown(index) {
+            if (this.activeMessage.index !== null && this.activeMessage.index !== index) {
+                this.activeMessage.index = null;
+                this.activeMessage.visible = false;
+            }
+            //console.log(this.activeMessage.index);
             //console.log(this.activeMessage.visible);
-            console.log(element.message, index);
-            console.log(this.contacts[this.activeChat].messages.length);
-            if (element.message)
-                if (this.activeMessage.visible == true) {
-                    this.activeMessage.visible = false;
-                } else {
-                    this.activeMessage.visible = true;
-                    this.activeMessage.index = true;
-                }
+            this.activeMessage.index = index;
+
+            if (this.activeMessage.visible) {
+                this.activeMessage.visible = false;
+                //console.log('deve passare a false');
+
+            } else {
+                this.activeMessage.visible = true;
+                //console.log('deve passare a true');
+
+            }
+            //console.log(this.activeMessage.index);
+            //console.log(this.activeMessage.visible);
+
         },
 
         deleteMessage(index) {
             this.contacts[this.activeChat].messages.splice(index, 1);
-            /* console.log('ok');
-            console.log(index); */
+            this.activeMessage.visible = false;
+            this.activeMessage.index = null;
+            //console.log('ok');
+            //console.log(index);
         }
 
     },

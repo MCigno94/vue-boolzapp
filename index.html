@@ -103,13 +103,13 @@
                             <!-- /.txt -->
                             <div class="hour">{{new Date().toLocaleString('it')}}</div>
                             <!-- /.hour -->
-                            <div class="dropbtn" @click="dropDown(message, index)">
+                            <div class="dropbtn" @click="dropDown(index)">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </div>
-                            <div class="dropdown" v-if="activeMessage.visible">
+                            <div class="dropdown" v-if="activeMessage.visible && activeMessage.index == index">
                                 <div id="myDropdown" class="dropdown-content">
                                     <a href="#">Info messaggio</a>
-                                    <a @click="deleteMessage" href="#">Cancella il messaggio</a>
+                                    <a @click="deleteMessage(index)" href="#">Cancella il messaggio</a>
                                 </div>
                             </div>
                         </div>
