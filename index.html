@@ -63,7 +63,9 @@
                                 <div class="preview-chat">
                                     <div class="nickname">{{contact.name}}</div>
                                     <!-- /.nickname -->
-                                    <div class="last-message">Ultimo messaggio</div>
+                                    <div class="last-message">
+                                        {{contact.messages[contact.messages.length-1].message}}
+                                    </div>
                                     <!-- /.last-message -->
                                 </div>
                                 <!-- /.preview-chat -->
