@@ -82,7 +82,14 @@
                             <div class="nickname">
                                 {{contacts[activeChat].name}}
                                 <div class="last-login">
-                                    Ultimo accesso {{new Date().toLocaleString('it')}}
+                                    <template v-if="inputMessage.length == 0">
+                                        Ultimo accesso {{new Date().toLocaleString('it')}}
+                                    </template>
+                                    <template v-else-if="autoMessage()">
+                                        online
+                                    </template> <template v-else>
+                                        sta scrivendo...
+                                    </template>
                                 </div>
                                 <!-- /.last-message -->
                             </div>
@@ -121,7 +128,8 @@
                     <div class="type-message bkg-primary-app d-flex item-center">
                         <i class="fa-regular fa-smile"></i>
                         <input type="text" placeholder="Scrivi un messaggio" v-model="inputMessage" @keyup.enter="addMessage">
-                        <i class="fa-solid fa-microphone"></i>
+                        <i v-if="inputMessage.length == 0" class="fa-solid fa-microphone"></i>
+                        <i id="paper_plane" v-else @click="addMessage" class="fa-solid fa-paper-plane"></i>
                     </div>
                     <!-- /.type-message -->
                 </section>

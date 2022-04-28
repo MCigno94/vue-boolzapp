@@ -194,9 +194,11 @@ const app = new Vue({
                 message: this.inputMessage,
                 status: 'sent'
             }
-            this.contacts[this.activeChat].messages.push(this.newMessage);
-            this.inputMessage = '';
-            setTimeout(this.autoMessage, 1000);
+            if (this.inputMessage.length !== 0 && this.inputMessage !== ' ') {
+                this.contacts[this.activeChat].messages.push(this.newMessage);
+                this.inputMessage = '';
+                setTimeout(this.autoMessage, 1000);
+            }
         },
         autoMessage() { // invio di un messagio automatico dopo ogni invio di un nuovo messaggio
             this.newAutoMessage = {
@@ -245,9 +247,16 @@ const app = new Vue({
             this.activeMessage.index = null;
             //console.log('ok');
             //console.log(index);
+        },
+        statusOnline() {
+
         }
 
     },
+
+    mounted: {
+
+    }
 
 
 });

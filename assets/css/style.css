@@ -235,11 +235,16 @@ i {
 
 .contact-list li {
     width: 100%;
-    min-height: 65px;
+    min-height: 70px;
+    max-height: 70px;
     height: calc(100% / 8);
     border-top: 1px solid var(--color-icon);
     background-color: white;
     padding: 0.5rem 1rem;
+}
+
+.contact-list li:last-child {
+    border-bottom: 1px solid var(--color-icon);
 }
 
 .contact-list li>img {
@@ -327,6 +332,10 @@ i {
     padding: 0 1rem;
 }
 
+#paper_plane {
+    cursor: pointer;
+}
+
 
 /* #endregion - messages */
 
@@ -341,31 +350,28 @@ i {
     right: 5px;
 }
 
-
-/* .dropbtn:hover,
-.dropbtn:focus {
-    background-color: #2980B9;
-} */
-
 .dropdown {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    transform: translate(-160px, 0);
+    z-index: 10;
 }
 
 .dropdown-content {
     position: absolute;
-    background-color: #99b08a;
+    background-color: #aad88a;
     min-width: 160px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
 }
 
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 0.75rem;
     text-decoration: none;
     display: block;
+    text-align: right;
 }
 
 .dropdown a:hover {
