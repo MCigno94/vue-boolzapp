@@ -353,7 +353,6 @@ i {
 }
 
 .dropdown-content {
-    display: none;
     position: absolute;
     background-color: #99b08a;
     min-width: 160px;

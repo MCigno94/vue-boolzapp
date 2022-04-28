@@ -177,7 +177,11 @@ const app = new Vue({
                 ],
             }
         ],
-        counterDrop: 0,
+        activeMessage: {
+            visible: false,
+            index: false
+        }
+
 
     },
     methods: {
@@ -212,20 +216,23 @@ const app = new Vue({
                 }
             });
         },
-        dropDown() {
-            this.contacts[this.activeChat].messages
-            if (this.counterDrop == 0) {
-                this.counterDrop += 1;
-            } else {
-                this.counterDrop -= 1;
-            }
-            //console.log(this.counter);
+        dropDown(element, index) {
+            //console.log(this.activeMessage.visible);
+            console.log(element.message, index);
+            console.log(this.contacts[this.activeChat].messages.length);
+            if (element.message)
+                if (this.activeMessage.visible == true) {
+                    this.activeMessage.visible = false;
+                } else {
+                    this.activeMessage.visible = true;
+                    this.activeMessage.index = true;
+                }
         },
 
         deleteMessage(index) {
             this.contacts[this.activeChat].messages.splice(index, 1);
-            console.log('ok');
-            console.log(index);
+            /* console.log('ok');
+            console.log(index); */
         }
 
     },
