@@ -6,6 +6,15 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 Milestone 2
 Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
 Click sul contatto mostra la conversazione del contatto cliccato
+Milestone 3
+● Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando
+“enter” il testo viene aggiunto al thread sopra, come messaggio verde
+● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
+un “ok” come risposta, che apparirà dopo 1 secondo.
+Milestone 4
+● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i
+contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo
+“mar” rimangono solo Marco e Martina)
 */
 
 const app = new Vue({
@@ -171,10 +180,10 @@ const app = new Vue({
         activeSerchContact: ['']
     },
     methods: {
-        selectChat(index) {
+        selectChat(index) { // seleziono la chat da visualizzare nella sezione dei messaggi di destra
             this.activeChat = index;
         },
-        addMessage() {
+        addMessage() { // creazione ed invio di un nuovo messaggio tramite il key.enter
             this.newMessage = {
                 date: '10/01/2020 15:50:00',
                 message: this.inputMessage,
@@ -184,27 +193,23 @@ const app = new Vue({
             this.inputMessage = '';
             setTimeout(this.autoMessage, 1000);
         },
-        autoMessage() {
+        autoMessage() { // invio di un messagio automatico dopo ogni invio di un nuovo messaggio
             this.newAutoMessage = {
-                date: '10/01/2020 15:50:00',
+                date: new Date().toLocaleString('it'),
                 message: 'ok',
                 status: 'received'
             }
             this.contacts[this.activeChat].messages.push(this.newAutoMessage);
         },
-        selectContact() {
+        selectContact() { // ricerca attiva dei contatti nella 'search bar'
             this.contacts.forEach(element => {
-                // seleziono nome del contatto
-                if (!element.name.toLowerCase().includes(this.searchContact.split(''))) {
-                    console.log(true);
+                if (!element.name.toLowerCase().includes(this.searchContact)) {
+                    //console.log(this.searchContact.length);
                     element.visible = false;
+                } else {
+                    element.visible = true;
                 }
             });
         }
-
     },
 });
-
-// scomporre la parola e verificare che ci siano delle uguaglianze
-
-/* this.searchContact.split('').includes(this.contacts[index].name.split('')) ? this.contacts[index].visible = true : this.contacts[index].visible = false */

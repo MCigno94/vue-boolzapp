@@ -230,6 +230,7 @@ i {
     flex-wrap: wrap;
     align-content: flex-start;
     overflow-y: auto;
+    background-color: white;
 }
 
 .contact-list li {
