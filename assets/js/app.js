@@ -177,7 +177,12 @@ const app = new Vue({
                 ],
             }
         ],
-        activeSerchContact: ['']
+        counterDrop: 0,
+        contentsDropDownMenu: [{
+            info: 'Info messaggio',
+            delete: 'Cancella il messaggio',
+            select: true
+        }]
     },
     methods: {
         selectChat(index) { // seleziono la chat da visualizzare nella sezione dei messaggi di destra
@@ -185,7 +190,7 @@ const app = new Vue({
         },
         addMessage() { // creazione ed invio di un nuovo messaggio tramite il key.enter
             this.newMessage = {
-                date: '10/01/2020 15:50:00',
+                date: new Date().toLocaleString('it'),
                 message: this.inputMessage,
                 status: 'sent'
             }
@@ -210,6 +215,16 @@ const app = new Vue({
                     element.visible = true;
                 }
             });
+        },
+        dropDown() {
+            if (this.counterDrop == 0) {
+                this.counterDrop += 1;
+            } else {
+                this.counterDrop -= 1;
+            }
+            //console.log(this.counter);
         }
-    },
+
+    }
+
 });

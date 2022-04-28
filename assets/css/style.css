@@ -269,6 +269,9 @@ i {
 
 /* #endregion - users */
 
+
+/* #region - messages */
+
 .show-messages {
     width: 100%;
     height: calc(100% - 100px);
@@ -282,6 +285,8 @@ i {
 .message-sent,
 .message-received {
     width: fit-content;
+    max-width: 45%;
+    min-width: 110px;
     margin-bottom: 0.75rem;
     border-radius: 10px;
     padding: 0.75rem;
@@ -321,3 +326,56 @@ i {
     font-size: 10px;
     padding: 0 1rem;
 }
+
+
+/* #endregion - messages */
+
+
+/* #region dropdown menu */
+
+.dropbtn {
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+
+/* .dropbtn:hover,
+.dropbtn:focus {
+    background-color: #2980B9;
+} */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #99b08a;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+
+/* #endregion dropdown menu */

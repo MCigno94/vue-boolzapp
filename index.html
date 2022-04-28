@@ -80,7 +80,7 @@
                             <div class="nickname">
                                 {{contacts[activeChat].name}}
                                 <div class="last-login">
-                                    Ultimo accesso oggi alle 12:00
+                                    Ultimo accesso {{new Date().toLocaleString('it')}}
                                 </div>
                                 <!-- /.last-message -->
                             </div>
@@ -101,8 +101,17 @@
                                 {{message.message}}
                             </div>
                             <!-- /.txt -->
-                            <div class="hour">12:00</div>
+                            <div class="hour">{{new Date().toLocaleString('it')}}</div>
                             <!-- /.hour -->
+                            <div class="dropbtn" @click="dropDown">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown ">
+                                <div id="myDropdown" v-for="content in contentsDropDownMenu" :class="counterDrop == 1 ? 'show' : ''" class="dropdown-content">
+                                    <a href="#">{{content.info}}</a>
+                                    <a href="#">{{content.delete}}</a>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.message-received -->
                     </div>
