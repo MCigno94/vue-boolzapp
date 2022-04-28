@@ -178,11 +178,7 @@ const app = new Vue({
             }
         ],
         counterDrop: 0,
-        contentsDropDownMenu: [{
-            info: 'Info messaggio',
-            delete: 'Cancella il messaggio',
-            select: true
-        }]
+
     },
     methods: {
         selectChat(index) { // seleziono la chat da visualizzare nella sezione dei messaggi di destra
@@ -217,6 +213,7 @@ const app = new Vue({
             });
         },
         dropDown() {
+            this.contacts[this.activeChat].messages
             if (this.counterDrop == 0) {
                 this.counterDrop += 1;
             } else {
@@ -225,10 +222,13 @@ const app = new Vue({
             //console.log(this.counter);
         },
 
-        deleteMessage() {
-            this.contacts[this.activeChat].messages.pop()
+        deleteMessage(index) {
+            this.contacts[this.activeChat].messages.splice(index, 1);
+            console.log('ok');
+            console.log(index);
         }
 
-    }
+    },
+
 
 });

@@ -107,9 +107,9 @@
                                 <i class="fa-solid fa-chevron-down"></i>
                             </div>
                             <div class="dropdown ">
-                                <div id="myDropdown" v-for="content in contentsDropDownMenu" :class="counterDrop == 1 ? 'show' : ''" class="dropdown-content">
-                                    <a href="#">{{content.info}}</a>
-                                    <a @click="deleteMessage" href="#">{{content.delete}}</a>
+                                <div id="myDropdown" :class="counterDrop == 1 ? 'show' : ''" class="dropdown-content">
+                                    <a href="#">Info messaggio</a>
+                                    <a @click="deleteMessage" href="#">Cancella il messaggio</a>
                                 </div>
                             </div>
                         </div>
