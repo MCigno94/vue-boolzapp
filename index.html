@@ -109,7 +109,7 @@
                             <div class="dropdown ">
                                 <div id="myDropdown" v-for="content in contentsDropDownMenu" :class="counterDrop == 1 ? 'show' : ''" class="dropdown-content">
                                     <a href="#">{{content.info}}</a>
-                                    <a href="#">{{content.delete}}</a>
+                                    <a @click="deleteMessage" href="#">{{content.delete}}</a>
                                 </div>
                             </div>
                         </div>

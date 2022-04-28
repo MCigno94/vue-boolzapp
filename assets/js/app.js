@@ -223,6 +223,10 @@ const app = new Vue({
                 this.counterDrop -= 1;
             }
             //console.log(this.counter);
+        },
+
+        deleteMessage() {
+            this.contacts[this.activeChat].messages.pop()
         }
 
     }
